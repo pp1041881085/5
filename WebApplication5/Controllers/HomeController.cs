@@ -19,7 +19,33 @@ namespace WebApplication5.Controllers
 
             return View();
         }
+        public ActionResult List(int page)
+        {
+            string[] data = new string[] {"台风逼近海南",
+            "海南大部分学校停课"};
+            ViewBag.data = data;
+            ViewBag.page = page;
+            return View();
+        }
+        /// <summary>
+        /// 添加新闻
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Add()
+        {
+            return View();
+        }
 
+        /// <summary>
+        /// 保存新闻
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Save(string title,string content)
+        {
+            ViewBag.Title = title;
+            ViewBag.content = content;
+            return View();
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
